@@ -1,0 +1,22 @@
+# 手动触发流水线：仓库页面 Actions → 左侧选这个 workflow → Run workflow
+name: Manual Run
+
+on:
+  workflow_dispatch:            # 手动按钮触发
+    inputs:
+      reason:
+        description: "这次手动执行的原因"
+        required: false
+        default: "手动验证"
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 打印触发动机
+        run: echo "触发原因：${{ inputs.reason }}"
+      - name: 打印上下文信息
+        run: |
+          echo "触发人：${{ github.actor }}"
+          echo "分支：${{ github.ref_name }}"
+          echo "事件：${{ github.event_name }}"
