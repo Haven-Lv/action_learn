@@ -5,10 +5,10 @@ __pycache__/
 
 # 测试报告
 reports/
-*.xml
 
 # 临时验证目录
 _verify/
+_tmp/
 
 # 编辑器/系统
 .vscode/
